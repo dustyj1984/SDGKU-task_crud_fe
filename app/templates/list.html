@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Tasks{% endblock title %}
+
+{% block content %}
+    <h1>Tasks</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Body</th>
+            <th>Active</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task["id"] }}</td>
+            <td>
+                <a href="{{ url_for('view_task_by_id', task_id=task['id']) }} ">
+                    {{ task["title"] }}
+                </a>
+            </td>
+            <td>{{ task["subtitle"] }}</td>
+            <td>{{ task["body"] }}</td>
+            <td>{{ task["active"] }}</td>
+            
+        </tr>
+    {% endfor %}           
+
+</table>
+   
+{% endblock content %}

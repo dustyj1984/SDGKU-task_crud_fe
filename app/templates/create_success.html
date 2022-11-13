@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Success!{% endblock title %}
+
+{% block content %}
+
+<h1>Success!</h1>
+<p>Your task was succesfully registered.</p>
+
+<a href="{{ url_for('view_home_page') }}">Click Here</a> to go to the home page.
+{% endblock content %}
